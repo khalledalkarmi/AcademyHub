@@ -3,6 +3,6 @@ import "./index.css"
 
 export default function Nav() {
   return (
-    <p className='text-3xl'>Nav</p>
+    <p className='tw-text-3xl'>Nav</p>
   )
 }
