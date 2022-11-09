@@ -22,12 +22,12 @@ export const AboutUs = () => {
                 <a href="#philosophy" className="no-underline text-gray-700 hover:bg-slate-200 hover:rounded-xl px-3"><span>Philosophy</span></a>
                 <a href="#reach" className="no-underline text-gray-700 hover:bg-slate-200 hover:rounded-xl px-3"><span>Reach</span></a>
             </div>
-            <div class="w-full ">
+            <div className="w-full ">
                 <section className=' p-6 bg-[#f2f2f2]' id="philosophy">
-                    <div class="page-width flex items-center flex-wrap flex-col">
-                        <h2 class="text-center ">Our philosophy</h2>
+                    <div className="page-width flex items-center flex-wrap flex-col">
+                        <h2 className="text-center ">Our philosophy</h2>
 
-                        <div class="mt-10 text-start w-3/5">
+                        <div className="mt-10 text-start w-3/5">
                             <h4>Proven learning approaches</h4>
                             <p className='text-justify'>
                                 Teaching is one of the most challenging and complex jobs on the planet.
@@ -38,7 +38,7 @@ export const AboutUs = () => {
                             </p>
                         </div>
 
-                        <div class=" text-start w-3/5 mt-4">
+                        <div className=" text-start w-3/5 mt-4">
                             <h4>Empowered educators</h4>
                             <p className='text-justify'>
                                 From school teachers and tutors to home schoolers and parents, engaged
@@ -49,7 +49,7 @@ export const AboutUs = () => {
                             </p>
                         </div>
 
-                        <div class=" text-start w-3/5 mt-4">
+                        <div className=" text-start w-3/5 mt-4">
                             <h4>Unique experiences</h4>
                             <p className='text-justify'>
                                 There is no such thing as "one size fits all" in education; each educator
@@ -59,7 +59,7 @@ export const AboutUs = () => {
                             </p>
                         </div>
 
-                        <div class=" text-start w-3/5 mt-4">
+                        <div className=" text-start w-3/5 mt-4">
                             <h4>Conscientious and supportive</h4>
                             <p className='text-justify'>
                                 We continue to provide academically sound content of the highest caliber
@@ -73,29 +73,29 @@ export const AboutUs = () => {
                 </section>
                 <section id="reach" className='mt-5 p-6'>
                     <div className="flex items-center flex-wrap flex-col">
-                        <h2 class="text-h3">Our reach</h2>
-                        <p class="text-center w-3/5 mt-4 mb-5">
+                        <h2 className="text-h3">Our reach</h2>
+                        <p className="text-center w-3/5 mt-4 mb-5">
                             The people who visit AcademyHub.com are the most important part of what we do.<br />
                             We provide learning resources in over 20 countries and six continents. <br />
                             Every user is different, but they share the same goal: to improve the lives of children through education.
                         </p>
 
-                        <div class="flex items-center flex-col">
+                        <div className="flex items-center flex-col">
                             <Image className='w-1/4' src={world}></Image>
                             <div className='mt-4'>
                                 <span className='text-xl font-medium'> Over40,869,242 people have signed up as AcademyHub.com members</span>
                             </div>
                         </div>
 
-                        <div class="flex justify-around  mt-6">
-                            <div class="w-1/4">
+                        <div className="flex justify-around  mt-6">
+                            <div className="w-1/4">
                                 <Image className='inline-block' src={teacher}></Image>
                                 <div className='mt-4 text-xl font-medium'>
                                     <span>20,434,621</span> are teachers
                                 </div>
                             </div>
 
-                            <div class="w-1/4">
+                            <div className="w-1/4">
                                 <Image className='' src={team}></Image>
                                 <div className='mt-4 text-xl font-medium'>
                                     <span>10,000</span> new members join every day
@@ -106,9 +106,9 @@ export const AboutUs = () => {
                 </section>
 
                 <section id="member-quotes" className='mt-8'>
-                    <div class="text-center">
-                        <h2 class="text-h3">What our members say</h2>
-                        <div class="flex  justify-around mt-6">
+                    <div className="text-center">
+                        <h2 className="text-h3">What our members say</h2>
+                        <div className="flex  justify-around mt-6">
                             <blockquote className='w-1/4'>
                                 <FaQuoteLeft className='text-blue-600 text-3xl' />
 
