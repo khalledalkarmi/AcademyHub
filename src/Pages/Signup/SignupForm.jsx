@@ -1,7 +1,7 @@
 import { Button, Label, TextInput } from 'flowbite-react'
 import React from 'react'
-import { BiMobile, BiLocationPlus } from "react-icons/bi";
-import { MdPassword } from "react-icons/md";
+import { BiMobile, BiLocationPlus, BiPhone } from "react-icons/bi";
+import { MdEmail, MdPassword } from "react-icons/md";
 import { GrUserNew } from "react-icons/gr";
 import { BsFacebook, BsGoogle, BsLinkedin } from "react-icons/bs";
 import { Link } from 'react-router-dom';
@@ -19,14 +19,14 @@ export const SignupForm = () => {
                     <div className='mt-5'>
                         <div className="mb-2 block">
                             <Label
-                                htmlFor="email4"
+                                htmlFor="firstName"
                                 value="First Name"
                             />
                         </div>
                         <TextInput
-                            id="email4"
-                            type="email"
-                            placeholder="name@eamil.com"
+                            id="firstName"
+                            type="text"
+                            placeholder="First Name"
                             required={true}
                             icon={GrUserNew}
                         />
@@ -34,14 +34,14 @@ export const SignupForm = () => {
                     <div className='mt-2'>
                         <div className="mb-2 block">
                             <Label
-                                htmlFor="passwordInput"
+                                htmlFor="lastName"
                                 value="Last Name"
                             />
                         </div>
                         <TextInput
-                            id="passwordInput"
-                            type="password"
-                            placeholder="Password"
+                            id="lastName"
+                            type="text"
+                            placeholder="Last Name"
                             required={true}
                             icon={GrUserNew}
                         />
@@ -49,11 +49,26 @@ export const SignupForm = () => {
                     <div className='mt-2'>
                         <div className="mb-2 block">
                             <Label
-                                htmlFor="passwordInput"
+                                htmlFor="email"
                                 value="Email"
                             />
                         </div>
                         <TextInput
+                            id="email"
+                            type="email"
+                            placeholder="name@eamil.com"
+                            required={true}
+                            icon={MdEmail}
+                        />
+                    </div>
+                    <div className='mt-2'>
+                        <div className="mb-2 block">
+                            <Label
+                                htmlFor="passwordInput"
+                                value="Password"
+                            />
+                        </div>
+                        <TextInput
                             id="passwordInput"
                             type="password"
                             placeholder="Password"
@@ -64,12 +79,12 @@ export const SignupForm = () => {
                     <div className='mt-2'>
                         <div className="mb-2 block">
                             <Label
-                                htmlFor="passwordInput"
+                                htmlFor="confirmPassword"
                                 value="Confirm Password"
                             />
                         </div>
                         <TextInput
-                            id="passwordInput"
+                            id="confirmPassword"
                             type="password"
                             placeholder="Password"
                             required={true}
@@ -79,14 +94,14 @@ export const SignupForm = () => {
                     <div className='mt-2'>
                         <div className="mb-2 block">
                             <Label
-                                htmlFor="passwordInput"
+                                htmlFor="phone"
                                 value="Phone"
                             />
                         </div>
                         <TextInput
-                            id="passwordInput"
-                            type="password"
-                            placeholder="Password"
+                            id="phone"
+                            type="text"
+                            placeholder="Phone"
                             required={true}
                             icon={BiMobile}
                         />
@@ -94,14 +109,14 @@ export const SignupForm = () => {
                     <div className='mt-2'>
                         <div className="mb-2 block">
                             <Label
-                                htmlFor="passwordInput"
+                                htmlFor="address"
                                 value="Address"
                             />
                         </div>
                         <TextInput
-                            id="passwordInput"
-                            type="password"
-                            placeholder="Password"
+                            id="address"
+                            type="text"
+                            placeholder="City, Street"
                             required={true}
                             icon={BiLocationPlus}
                         />
@@ -115,8 +130,8 @@ export const SignupForm = () => {
                         </Button>
 
                     </div>
-                    <p className='text-center text-base mt-2.5'>Or Signup Using</p>
-                    <div className='flex justify-center gap-3 text-5xl'>
+                    <p className='text-center text-base my-4 '>Or Signup Using</p>
+                    <div className='flex justify-center gap-3 text-5xl mb-3'>
                         <BsFacebook className='hover:text-cyan-500' />
                         <BsGoogle className='hover:text-cyan-500' />
                         <BsLinkedin className='hover:text-cyan-500' />
