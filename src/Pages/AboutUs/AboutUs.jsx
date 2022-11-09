@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image } from 'react-bootstrap'
+import { FaQuoteLeft } from "react-icons/fa";
 
 import world from './planet-earth.png'
 import teacher from './teacher.png'
@@ -73,7 +74,7 @@ export const AboutUs = () => {
                 <section id="reach" className='mt-5 p-6'>
                     <div className="flex items-center flex-wrap flex-col">
                         <h2 class="text-h3">Our reach</h2>
-                        <p class="text-center w-3/5 mt-4">
+                        <p class="text-center w-3/5 mt-4 mb-5">
                             The people who visit Education.com are the most important part of what we do.<br />
                             We provide learning resources in over 20 countries and six continents. <br />
                             Every user is different, but they share the same goal: to improve the lives of children through education.
@@ -81,22 +82,22 @@ export const AboutUs = () => {
 
                         <div class="flex items-center flex-col">
                             <Image className='w-1/4' src={world}></Image>
-                            <div className='mt-2'>
-                                Over<span>40,869,242</span> people have signed up as Education.com members
+                            <div className='mt-4'>
+                                <span className='text-xl font-medium'> Over40,869,242 people have signed up as Education.com members</span>
                             </div>
                         </div>
 
                         <div class="flex justify-around  mt-6">
                             <div class="w-1/4">
                                 <Image className='inline-block' src={teacher}></Image>
-                                <div className='mt-4 text-xl'>
+                                <div className='mt-4 text-xl font-medium'>
                                     <span>20,434,621</span> are teachers
                                 </div>
                             </div>
 
                             <div class="w-1/4">
                                 <Image className='' src={team}></Image>
-                                <div className='mt-4 text-xl'>
+                                <div className='mt-4 text-xl font-medium'>
                                     <span>10,000</span> new members join every day
                                 </div>
                             </div>
@@ -104,6 +105,37 @@ export const AboutUs = () => {
                     </div>
                 </section>
 
+                <section id="member-quotes" className='mt-8'>
+                    <div class="text-center">
+                        <h2 class="text-h3">What our members say</h2>
+                        <div class="flex  justify-around mt-6">
+                            <blockquote className='w-1/4'>
+                                <FaQuoteLeft className='text-blue-600 text-3xl' />
+
+                                <p>
+                                    Students like the interactive games to practice reading and writing.
+                                    As a teacher, I love the correlation to standards, and that I am able
+                                    to see the progress and struggles my students have in obtaining skills.
+                                </p>
+                                <footer className='font-bold'>
+                                    - Sara D., Teacher
+                                </footer>
+                            </blockquote>
+                            <blockquote className='w-1/4'>
+                                <FaQuoteLeft className='text-blue-600 text-3xl' />
+                                <p>
+                                    AcademyHub.com has been an invaluable aid to me in teaching my children
+                                    from home, no matter what the grade level. It's so quick and easy to
+                                    look for and download specifically what I need in a moment, and at a
+                                    most reasonable cost.
+                                </p>
+                                <footer className='font-bold'>
+                                    - Patricia K., Homeschooler
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     )
