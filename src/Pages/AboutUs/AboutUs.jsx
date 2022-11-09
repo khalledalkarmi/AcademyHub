@@ -75,7 +75,7 @@ export const AboutUs = () => {
                     <div className="flex items-center flex-wrap flex-col">
                         <h2 class="text-h3">Our reach</h2>
                         <p class="text-center w-3/5 mt-4 mb-5">
-                            The people who visit Education.com are the most important part of what we do.<br />
+                            The people who visit AcademyHub.com are the most important part of what we do.<br />
                             We provide learning resources in over 20 countries and six continents. <br />
                             Every user is different, but they share the same goal: to improve the lives of children through education.
                         </p>
@@ -83,7 +83,7 @@ export const AboutUs = () => {
                         <div class="flex items-center flex-col">
                             <Image className='w-1/4' src={world}></Image>
                             <div className='mt-4'>
-                                <span className='text-xl font-medium'> Over40,869,242 people have signed up as Education.com members</span>
+                                <span className='text-xl font-medium'> Over40,869,242 people have signed up as AcademyHub.com members</span>
                             </div>
                         </div>
 
