@@ -1,7 +1,6 @@
-import { Button, Label, TextInput } from 'flowbite-react'
+import { Button, TextInput } from 'flowbite-react'
 import React from 'react'
 import { BiSend } from 'react-icons/bi'
-import { HiMail } from 'react-icons/hi'
 
 export const SendInput = () => {
     return (

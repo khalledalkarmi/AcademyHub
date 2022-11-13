@@ -3,7 +3,7 @@ import React from 'react'
 import { Image } from 'react-bootstrap'
 import { BiBuoy } from 'react-icons/bi'
 import { DiCss3, DiHtml5, DiJavascript1 } from 'react-icons/di'
-import { HiChartPie, HiViewBoards, HiTable, HiArrowSmRight, HiShoppingBag, HiUser, HiInbox } from 'react-icons/hi'
+import { HiChartPie, HiViewBoards } from 'react-icons/hi'
 import student from './male-student.png'
 export const AsideBar = () => {
     return (
