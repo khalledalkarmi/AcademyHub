@@ -12,7 +12,6 @@ import { SignupForm } from "./Pages/Signup/SignupForm";
 function App() {
   return (
     <>
-      <NavBar />
       <Routes>
         <Route path="/" element={<Header />} />
         <Route path="/login" element={<Login />} />

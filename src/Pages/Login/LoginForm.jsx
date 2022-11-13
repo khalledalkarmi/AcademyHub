@@ -4,6 +4,7 @@ import { HiMail } from "react-icons/hi";
 import { MdPassword } from "react-icons/md";
 import { BsFacebook, BsGoogle, BsLinkedin } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+import NavBar from '../../component/Nav';
 
 
 //TODO: login via social media 
@@ -14,7 +15,8 @@ import { Link } from 'react-router-dom';
 export const LoginForm = () => {
   return (
     <>
-      
+      <NavBar />
+
       <div className='w-full h-full min-h-screen'>
         <div className=' flex mt-28 items-center	 flex-col '>
           <p className='text-5xl mb-10'>Login</p>
