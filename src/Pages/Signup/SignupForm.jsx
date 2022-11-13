@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 //TODO: signup via social media 
 //TODO: add title   
 //TODO: handle signup
+//TODO: redirect to home page if user logged in 
 
 export const SignupForm = () => {
     return (
