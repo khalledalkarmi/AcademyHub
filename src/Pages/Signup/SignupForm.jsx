@@ -1,6 +1,6 @@
 import { Button, Label, TextInput } from 'flowbite-react'
 import React from 'react'
-import { BiMobile, BiLocationPlus, BiPhone } from "react-icons/bi";
+import { BiMobile, BiLocationPlus } from "react-icons/bi";
 import { MdEmail, MdPassword } from "react-icons/md";
 import { GrUserNew } from "react-icons/gr";
 import { BsFacebook, BsGoogle, BsLinkedin } from "react-icons/bs";

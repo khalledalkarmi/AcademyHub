@@ -7,7 +7,7 @@ import { HiChartPie, HiViewBoards } from 'react-icons/hi'
 import student from './male-student.png'
 export const AsideBar = () => {
     return (
-        <div className="w-fit border-2">
+        <div className="w-[22vw] border-2">
             <Sidebar aria-label="Sidebar with logo branding example">
                 <div className='flex flex-col items-center border-b-2 pb-2 border-gray-200'>
                     <Image src={student} className='rounded-full w-1/2 mb-4' />

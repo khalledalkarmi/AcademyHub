@@ -1,6 +1,7 @@
 import React from 'react'
 import { Announcement } from './Announcement'
 import { AsideBar } from './AsideBar'
+import { Messages } from './Messages'
 import { SendInput } from './SendInput'
 
 export const MainPage = () => {
@@ -10,9 +11,7 @@ export const MainPage = () => {
                 <AsideBar />
                 <div className='flex flex-col w-full'>
                     <Announcement />
-                    <div className='w-full min-h-[61vh] '>
-
-                    </div>
+                    <Messages />
                     <SendInput />
                 </div>
             </div>
