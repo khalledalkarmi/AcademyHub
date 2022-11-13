@@ -10,7 +10,7 @@ export const MainPage = () => {
                 <AsideBar />
                 <div className='flex flex-col w-full'>
                     <Announcement />
-                    <div className='w-full h-screen '>
+                    <div className='w-full min-h-[61vh] '>
 
                     </div>
                     <SendInput />

@@ -4,7 +4,7 @@ import { BiSend } from 'react-icons/bi'
 
 export const SendInput = () => {
     return (
-        <div className='flex justify-between'>
+        <div className='flex justify-between sticky bottom-0'>
             <TextInput
                 id="email4"
                 type="text"
