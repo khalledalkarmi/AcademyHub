@@ -8,6 +8,7 @@ import teacher from './teacher.png'
 import team from './team.png'
 
 export const AboutUs = () => {
+
     return (
         <>
             <NavBar />
