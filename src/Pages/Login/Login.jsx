@@ -1,8 +1,6 @@
 import * as React from 'react';
 
 import TextField from '@mui/material/TextField';
-
-
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -10,10 +8,14 @@ import { useSignIn } from 'react-auth-kit';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'flowbite-react';
 import NavBar from '../../component/Nav';
+import axios from 'axios';
+import { loginUser } from '../../API';
 
-
-
-
+// TODO: login with social 
+// FIXME: responsive 
+// FIXME: if user already logged in redirect ot home page  
+// TODO: handle auth 
+// TODO: handle validation  
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -37,15 +39,38 @@ export default function SignIn() {
     console.log({
       email: data.get('email'),
       password: data.get('password'),
+
     });
+
+
+    axios.post(loginUser(), {
+      email: data.get('email'),
+      password: data.get('password'),
+    })
+      .then(res => {
+        console.log(res.data);
+        if (Login({
+          token: res.data.access_token,
+          expiresIn: 1440,
+          tokenType: "Bearer",
+          authState: res.data.user_info,
+        })) {
+          //TODO: navigate base role of user (user, admin ,coach)
+        }
+      }).catch(res => {
+      
+        console.log(res)
+        // TODO: update Form with error message 
+      })
   }
+
 
   return (
     <div >
       <NavBar />
       <div className="h-[76vh] relative flex justify-center items-center"
         style={{
-          backgroundImage: 'url(https://source.unsplash.com/collection/1795151)',
+          backgroundImage: 'url(https://unsplash.com/photos/PC91Jm1DlWA/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8OXx8c2Nob29sfGVufDB8fHx8MTY2OTQ2NzA4Mg&force=true&w=2400)',
           backgroundRepeat: 'no-repeat',
           backgroundColor: (t) =>
             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -55,7 +80,7 @@ export default function SignIn() {
       >
         <div className='w-1/3 bg-gray-200 text-white p-5 opacity-90 h-1/2 rounded-xl min-h-[80%]'>
           <h3 className='text-black text-center'>Login</h3>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+          <form  onSubmit={handleSubmit} >
             <TextField
               margin="normal"
               required
@@ -84,7 +109,7 @@ export default function SignIn() {
               Sign In
             </Button>
             <Copyright sx={{ mt: 5 }} />
-          </Box>
+          </form>
         </div>
       </div>
     </div>
