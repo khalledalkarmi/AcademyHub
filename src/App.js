@@ -6,9 +6,20 @@ import { Header } from "./Pages/Home/index";
 import  SignIn from "./Pages/Login/Login";
 import { MainPage } from "./Pages/MainPage";
 import { SignupForm } from "./Pages/Signup/SignupForm";
-
+import { gapi } from 'gapi-script';
+import { useEffect } from "react";
+const clientId =  '76710521547-nbakpmr8qmrvj6gt2rhu7nhd75dg6ahr.apps.googleusercontent.com'
 
 function App() {
+  useEffect(()=>{
+    function start(params) {
+      gapi.client.init({
+        clientId: clientId,
+        scope:''
+      })
+    }
+    gapi.load('client:auth2',start)
+  })
   return (
     <>
       <Routes>

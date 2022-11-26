@@ -9,7 +9,10 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from 'flowbite-react';
 import NavBar from '../../component/Nav';
 import axios from 'axios';
+import { GoogleLogin } from 'react-google-login'
 import { loginUser } from '../../API';
+const clientId = '76710521547-nbakpmr8qmrvj6gt2rhu7nhd75dg6ahr.apps.googleusercontent.com'
+
 
 // TODO: login with social 
 // FIXME: responsive 
@@ -58,7 +61,7 @@ export default function SignIn() {
           //TODO: navigate base role of user (user, admin ,coach)
         }
       }).catch(res => {
-      
+
         console.log(res)
         // TODO: update Form with error message 
       })
@@ -68,7 +71,7 @@ export default function SignIn() {
   return (
     <div >
       <NavBar />
-      <div className="h-[76vh] relative flex justify-center items-center"
+      <div className="h-[100vh] relative flex justify-center items-center"
         style={{
           backgroundImage: 'url(https://unsplash.com/photos/PC91Jm1DlWA/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8OXx8c2Nob29sfGVufDB8fHx8MTY2OTQ2NzA4Mg&force=true&w=2400)',
           backgroundRepeat: 'no-repeat',
@@ -78,9 +81,9 @@ export default function SignIn() {
           backgroundPosition: 'center',
         }}
       >
-        <div className='w-1/3 bg-gray-200 text-white p-5 opacity-90 h-1/2 rounded-xl min-h-[80%]'>
+        <div className='w-1/3 bg-gray-200 text-white p-5 opacity-90 h-1/2 rounded-xl '>
           <h3 className='text-black text-center'>Login</h3>
-          <form  onSubmit={handleSubmit} >
+          <form onSubmit={handleSubmit} className="h-5/6" >
             <TextField
               margin="normal"
               required
@@ -102,12 +105,24 @@ export default function SignIn() {
               autoComplete="current-password"
             />
             <Button
-              className='w-full bg-black mb-3'
+              className='w-full bg-orange-500'
               type="submit"
-
             >
               Sign In
             </Button>
+            <div className='w-full flex justify-center mt-10 rounded-full'>
+              <GoogleLogin
+                className='w-1/2text-center rounded-full'
+                clientId={clientId}
+                onSuccess={credentialResponse => {
+                  console.log(credentialResponse);
+                  //TODO: handle login server side 
+                }}
+                onError={() => {
+                  console.log('Login Failed');
+                }}
+              />
+            </div>
             <Copyright sx={{ mt: 5 }} />
           </form>
         </div>
