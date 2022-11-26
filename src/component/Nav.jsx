@@ -14,8 +14,8 @@ function NavBar() {
             className="mr-3 h-6 sm:h-9"
             alt="AcademyHub Logo"
           /> */}
-        <NavLink to='/'>
-          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+        <NavLink className='no-underline text-[#ff7900]' to='/'>
+          <span className="self-center whitespace-nowrap text-xl font-semibold text-[#ff7900] no-underline">
             AcademyHub
           </span>
         </NavLink>
@@ -28,17 +28,11 @@ function NavBar() {
         >
           Home
         </Navbar.Link>
-        <Navbar.Link >
-          <NavLink to='/'>Home</NavLink>
+        <Navbar.Link className="text-[#ff7900]" >
+          <NavLink className="text-[#ff7900] no-underline" to='/'>Home</NavLink>
         </Navbar.Link>
         <Navbar.Link >
-        <NavLink to='/about'>About Us</NavLink>
-        </Navbar.Link>
-        <Navbar.Link >
-          Pricing
-        </Navbar.Link>
-        <Navbar.Link >
-          Contact
+        <NavLink className="text-[#ff7900]" to='/about'>About Us</NavLink>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
