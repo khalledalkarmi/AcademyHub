@@ -10,14 +10,12 @@ import { Button } from 'flowbite-react';
 import NavBar from '../../component/Nav';
 import axios from 'axios';
 import { GoogleLogin } from 'react-google-login'
-import { loginUser } from '../../API';
+import { loginUser, loginSocial } from '../../API';
 const clientId = '76710521547-nbakpmr8qmrvj6gt2rhu7nhd75dg6ahr.apps.googleusercontent.com'
 
 
-// TODO: login with social 
 // FIXME: responsive 
 // FIXME: if user already logged in redirect ot home page  
-// TODO: handle auth 
 // TODO: handle validation  
 function Copyright(props) {
   return (
@@ -32,6 +30,7 @@ function Copyright(props) {
   );
 }
 
+// handle login form 
 export default function SignIn() {
   const Login = useSignIn()
   const navigate = useNavigate()
@@ -45,7 +44,7 @@ export default function SignIn() {
 
     });
 
-
+    // manual login 
     axios.post(loginUser(), {
       email: data.get('email'),
       password: data.get('password'),
@@ -67,7 +66,23 @@ export default function SignIn() {
       })
   }
 
-
+  // login with google
+  const loginGoogle = (provider, accessProviderToken) => {
+    axios.post(loginSocial(), {
+      provider: `${provider}`,
+      access_provider_token: `${accessProviderToken}`
+    }).then(res => {
+      console.log(res);
+      if (Login({
+        token: res.data.access_token,
+        expiresIn: 1440,
+        tokenType: "Bearer",
+        authState: res.data.user_info,
+      })) {
+        //TODO: navigate base role of user (user, admin ,coach)
+      }
+    })
+  }
   return (
     <div >
       <NavBar />
@@ -116,7 +131,7 @@ export default function SignIn() {
                 clientId={clientId}
                 onSuccess={credentialResponse => {
                   console.log(credentialResponse);
-                  //TODO: handle login server side 
+                  loginGoogle('google', credentialResponse.accessToken)
                 }}
                 onError={() => {
                   console.log('Login Failed');
