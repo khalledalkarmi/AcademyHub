@@ -6,9 +6,10 @@
     [x] Nav 
     [x] Home Page 
     [x] Login Page 
-    [implement login register logic]
+    [x] implement login 
+    [x] Signup Page
+    [x] login with social  
     [] User Page 
-    [] Signup Page 
     [] About Us Page 
     [] Admin Page 
     [] Footer
