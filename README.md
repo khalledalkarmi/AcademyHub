@@ -1,15 +1,15 @@
 # AcademyHub
 
-### TODO
+### TODO (Big Refactor)
+    [] Redesign app component using (mantine.dev)
+        [] Home Page
+        [] Login Page
+        [] SignUp Page
+        [] Main Page
+        [] Nav Bar & Aside Bar
+        [] Footer
+        [] support Dark Theme 
+        [] User Page 
+        [] About Us Page 
+        [] Admin Page 
 
-    [x] add design package (tailwind, bootstrap)
-    [x] Nav 
-    [x] Home Page 
-    [x] Login Page 
-    [x] implement login 
-    [x] Signup Page
-    [x] login with social  
-    [] User Page 
-    [] About Us Page 
-    [] Admin Page 
-    [] Footer
