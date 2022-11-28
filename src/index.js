@@ -6,17 +6,20 @@ import "./index.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from 'react-auth-kit'
+import { MantineProvider } from '@mantine/core';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthProvider authType={'cookie'}
-      authName={'_auth'}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </AuthProvider>
+    <MantineProvider withGlobalStyles withNormalizeCSS>
+      <AuthProvider authType={'cookie'}
+        authName={'_auth'}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </AuthProvider>
+    </MantineProvider>
   </React.StrictMode>
 );
 
