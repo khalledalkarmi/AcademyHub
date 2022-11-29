@@ -1,63 +1,112 @@
-import { Button, Sidebar } from 'flowbite-react'
-import React from 'react'
-import { Image } from 'react-bootstrap'
-import { BiBuoy } from 'react-icons/bi'
-import { DiCss3, DiHtml5, DiJavascript1 } from 'react-icons/di'
-import { HiChartPie, HiViewBoards } from 'react-icons/hi'
-import student from './male-student.png'
-export const AsideBar = () => {
+import { Navbar, Group, Code, ScrollArea, createStyles } from '@mantine/core';
+import {
+    IconNotes,
+    IconCalendarStats,
+    IconGauge,
+    IconPresentationAnalytics,
+    IconFileAnalytics,
+    IconAdjustments,
+    IconLock,
+} from '@tabler/icons';
+
+import { LinksGroup } from './NavbarLinksGroup';
+import { Logo } from './Logo';
+import { UserButton } from './UserButton';
+
+const mockdata = [
+    { label: 'Dashboard', icon: IconGauge },
+    {
+        label: 'Market news',
+        icon: IconNotes,
+        initiallyOpened: true,
+        links: [
+            { label: 'Overview', link: '/' },
+            { label: 'Forecasts', link: '/' },
+            { label: 'Outlook', link: '/' },
+            { label: 'Real time', link: '/' },
+        ],
+    },
+    {
+        label: 'Releases',
+        icon: IconCalendarStats,
+        links: [
+            { label: 'Upcoming releases', link: '/' },
+            { label: 'Previous releases', link: '/' },
+            { label: 'Releases schedule', link: '/' },
+        ],
+    },
+    { label: 'Analytics', icon: IconPresentationAnalytics },
+    { label: 'Contracts', icon: IconFileAnalytics },
+    { label: 'Settings', icon: IconAdjustments },
+    {
+        label: 'Security',
+        icon: IconLock,
+        links: [
+            { label: 'Enable 2FA', link: '/' },
+            { label: 'Change password', link: '/' },
+            { label: 'Recovery codes', link: '/' },
+        ],
+    },
+];
+
+const useStyles = createStyles((theme) => ({
+    navbar: {
+        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
+        paddingBottom: 0,
+    },
+
+    header: {
+        padding: theme.spacing.md,
+        paddingTop: 0,
+        marginLeft: -theme.spacing.md,
+        marginRight: -theme.spacing.md,
+        color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+        borderBottom: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
+            }`,
+    },
+
+    links: {
+        marginLeft: -theme.spacing.md,
+        marginRight: -theme.spacing.md,
+    },
+
+    linksInner: {
+        paddingTop: theme.spacing.xl,
+        paddingBottom: theme.spacing.xl,
+    },
+
+    footer: {
+        marginLeft: -theme.spacing.md,
+        marginRight: -theme.spacing.md,
+        borderTop: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]
+            }`,
+    },
+}));
+
+export function AsideBar() {
+    const { classes } = useStyles();
+    const links = mockdata.map((item) => <LinksGroup {...item} key={item.label} />);
+
     return (
-        <div className="w-[22vw] border-2">
-            <Sidebar aria-label="Sidebar with logo branding example">
-                <div className='flex flex-col items-center border-b-2 pb-2 border-gray-200'>
-                    <Image src={student} className='rounded-full w-1/2 mb-4' />
-                    <Button className='w-1/2'><span className='text-sm'> Edit</span></Button>
-                    <p className='text-center mt-3 text-2xl'>Student Name</p>
-                </div>
-                <Sidebar.Items>
-                    <Sidebar.ItemGroup>
-                        <p className='text-center pr-5 text-xl'>Classes</p>
-                        <Sidebar.Item
-                            href="#"
-                            icon={DiJavascript1}
-                        >
-                            JavaScript
-                        </Sidebar.Item>
-                        <Sidebar.Item
-                            href="#"
-                            icon={DiHtml5}
-                        >
-                            HTML5
-                        </Sidebar.Item>
-                        <Sidebar.Item
-                            href="#"
-                            icon={DiCss3}
-                        >
-                            CSS3
-                        </Sidebar.Item>
-                    </Sidebar.ItemGroup>
-                    <Sidebar.ItemGroup>
-                        <Sidebar.Item
-                            href="#"
-                            icon={HiChartPie}
-                        >
-                            Upgrade to Pro
-                        </Sidebar.Item>
-                        <Sidebar.Item
-                            href="#"
-                            icon={HiViewBoards}
-                        >
-                            Documentation
-                        </Sidebar.Item>
-                        <Sidebar.Item
-                            href="#"
-                            icon={BiBuoy}
-                        >
-                            Help
-                        </Sidebar.Item>
-                    </Sidebar.ItemGroup>
-                </Sidebar.Items>
-            </Sidebar>
-        </div>
-    )
+        <Navbar height={800} width={{ sm: 300 }} p="md" className={classes.navbar}>
+            <Navbar.Section className={classes.header}>
+                <Group position="apart">
+                    <Logo width={120} />
+                    <Code sx={{ fontWeight: 700 }}>v3.1.2</Code>
+                </Group>
+            </Navbar.Section>
+
+            <Navbar.Section grow className={classes.links} component={ScrollArea}>
+                <div className={classes.linksInner}>{links}</div>
+            </Navbar.Section>
+
+            <Navbar.Section className={classes.footer}>
+                <UserButton
+                    image="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
+                    name="Ann Nullpointer"
+                    email="anullpointer@yahoo.com"
+                />
+            </Navbar.Section>
+        </Navbar>
+    );
 }
