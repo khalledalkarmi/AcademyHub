@@ -2,7 +2,7 @@
 
 ### TODO (Big Refactor)
     [] Redesign app component using (mantine.dev)
-        [] Home Page
+        [x] Home Page
         [] Login Page
         [] SignUp Page
         [] Main Page
