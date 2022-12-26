@@ -1,4 +1,5 @@
 import { createStyles, Container, Title, Text, Button } from '@mantine/core';
+import Pusher from "pusher-js"
 
 const useStyles = createStyles((theme) => ({
     root: {
@@ -76,6 +77,14 @@ const useStyles = createStyles((theme) => ({
 
 export function Header() {
     const { classes } = useStyles();
+    var pusher = new Pusher('a55e00eca2f25da1d516', {
+        cluster: 'ap2'
+      });
+    
+      var channel = pusher.subscribe('chat');
+      channel.bind('my-event', function (data) {
+        console.log(data);
+      });
     return (
         <div className={classes.root}>
             <Container size="lg">
